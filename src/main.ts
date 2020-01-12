@@ -4,7 +4,7 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger'
 import * as Mongoose from 'mongoose'
 
 async function bootstrap() {
-  Mongoose.connect('mongodb://localhost/home-backend', {
+  Mongoose.connect('mongodb://127.0.0.1:27017/home-backend', {
     useNewUrlParser: true,
     useFindAndModify: false,
     useCreateIndex: true
@@ -23,8 +23,8 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, options)
   SwaggerModule.setup('api-docs', app, document)
 
-  await app.listen(3000)
+  await app.listen(80)
 
-  console.log('Http service started on localhost:3000 ...')
+  console.log('Http service started on localhost:80 ...')
 }
 bootstrap()
