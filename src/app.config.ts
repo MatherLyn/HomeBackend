@@ -1,4 +1,4 @@
 export default {
-  host: 'http://127.0.0.1',
-  port: '80'
+  host: 'http://116.62.215.77',
+  port: 80
 }
