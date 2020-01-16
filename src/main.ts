@@ -13,7 +13,9 @@ async function bootstrap() {
   
   console.log('Successfully connect to mongodb service on localhost:27017 ...')
 
-  const app = await NestFactory.create(AppModule, { cors: true })
+  const app = await NestFactory.create(AppModule)
+  
+  app.enableCors()
 
   const options = new DocumentBuilder()
     .setTitle('Browser Home APIs')
